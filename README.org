@@ -1,0 +1,7 @@
+* プログラミングコンテストチャレンジブック
+
+- POJ:
+  http://poj.org/
+
+- pythonの解答例:
+  https://github.com/letusfly85/python_de_pcc
