@@ -16,6 +16,10 @@ vy = [0, 0, 1, -1]
 memo = [[float('inf') for j in range(M)] for i in range(N)]
 
 
+def isBound(n, m, x, y):
+    return x < 0 or y < 0 or x >= n or y >= m
+
+
 def bfs(i, j):
     queue = []
     queue.append((i, j))
@@ -29,7 +33,7 @@ def bfs(i, j):
         for x, y in zip(vx, vy):
             nx = p + x
             ny = q + y
-            if nx < 0 or ny < 0 or nx >= N or ny >= M or field[nx][ny] == "#":
+            if isBound(N, M, nx, ny) or field[nx][ny] == "#":
                 continue
             if memo[nx][ny] > memo[p][q] + 1:
                 queue.append((nx, ny))
